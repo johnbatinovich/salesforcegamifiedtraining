@@ -1,0 +1,152 @@
+{
+  "title": "Module 7: Resources & Next Steps - Continuing Your Journey",
+  "description": "Test your knowledge of available resources, certification paths, and strategies for ongoing Dynamics 365 mastery",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of pursuing Microsoft Dynamics 365 certification?",
+      "options": [
+        "It's required to use the software",
+        "Validates expertise, increases credibility with clients, and opens career advancement opportunities",
+        "It's free to obtain",
+        "It guarantees immediate promotion"
+      ],
+      "correct": 1,
+      "explanation": "Microsoft certification validates your expertise, significantly increases credibility with clients and management, and opens doors to career advancement opportunities in the growing CRM field."
+    },
+    {
+      "id": 2,
+      "question": "Which Microsoft Learn path is most relevant for broadcast advertising sales professionals?",
+      "options": [
+        "Dynamics 365 for Manufacturing",
+        "Dynamics 365 Sales and Customer Service fundamentals with industry-specific modules",
+        "Azure Development",
+        "Office 365 Administration"
+      ],
+      "correct": 1,
+      "explanation": "The Dynamics 365 Sales and Customer Service fundamentals path, combined with industry-specific modules, provides the most relevant training for broadcast advertising professionals."
+    },
+    {
+      "id": 3,
+      "question": "How often should you review and update your Dynamics 365 skills?",
+      "options": [
+        "Once per year",
+        "Quarterly, with monthly feature updates and continuous learning",
+        "Only when problems arise",
+        "Every five years"
+      ],
+      "correct": 1,
+      "explanation": "Quarterly skills reviews with monthly feature updates ensure you stay current with Dynamics 365's rapid evolution and can leverage new capabilities for competitive advantage."
+    },
+    {
+      "id": 4,
+      "question": "What's the best way to stay informed about new Dynamics 365 features relevant to broadcast sales?",
+      "options": [
+        "Wait for company announcements",
+        "Subscribe to Microsoft roadmaps, join user communities, and follow industry-specific Dynamics 365 blogs",
+        "Check occasionally when convenient",
+        "Rely on colleagues to inform you"
+      ],
+      "correct": 1,
+      "explanation": "Active engagement with Microsoft roadmaps, user communities, and industry blogs ensures you discover new features early and can implement them for competitive advantage."
+    },
+    {
+      "id": 5,
+      "question": "Which Power Platform component offers the most immediate value for broadcast advertising sales?",
+      "options": [
+        "Power Apps for custom applications",
+        "Power BI for data visualization and client reporting",
+        "Power Automate for workflow automation",
+        "Power Virtual Agents for chatbots"
+      ],
+      "correct": 1,
+      "explanation": "Power BI provides immediate value through compelling data visualizations and automated client reporting that directly supports sales conversations and demonstrates ROI."
+    },
+    {
+      "id": 6,
+      "question": "How should you approach learning advanced Dynamics 365 features?",
+      "options": [
+        "Learn everything at once",
+        "Focus on features that directly impact your daily workflow and client relationships first",
+        "Wait until you have time",
+        "Only learn what's required"
+      ],
+      "correct": 1,
+      "explanation": "Prioritizing features that directly impact daily workflow and client relationships ensures immediate practical benefits while building confidence for more advanced capabilities."
+    },
+    {
+      "id": 7,
+      "question": "What role should the Dynamics 365 community play in your ongoing learning?",
+      "options": [
+        "It's not necessary",
+        "Active participation provides real-world insights, problem-solving support, and networking opportunities",
+        "Only for technical issues",
+        "Occasional browsing is sufficient"
+      ],
+      "correct": 1,
+      "explanation": "Active community participation provides invaluable real-world insights, collaborative problem-solving, and professional networking that accelerates your expertise development."
+    },
+    {
+      "id": 8,
+      "question": "How can you measure the ROI of your Dynamics 365 expertise development?",
+      "options": [
+        "It's impossible to measure",
+        "Track metrics like deal closure rates, client satisfaction, time savings, and revenue growth",
+        "Only measure time spent learning",
+        "Focus solely on certification completion"
+      ],
+      "correct": 1,
+      "explanation": "Measuring concrete business metrics like deal closure rates, client satisfaction scores, time savings, and revenue growth demonstrates the tangible value of your Dynamics 365 expertise."
+    },
+    {
+      "id": 9,
+      "question": "What's the most effective way to share Dynamics 365 knowledge with your team?",
+      "options": [
+        "Keep knowledge to yourself for competitive advantage",
+        "Create regular knowledge-sharing sessions and collaborative learning initiatives",
+        "Only share when asked directly",
+        "Send occasional emails with tips"
+      ],
+      "correct": 1,
+      "explanation": "Regular knowledge-sharing sessions and collaborative learning initiatives create a culture of continuous improvement that benefits the entire team and organization."
+    },
+    {
+      "id": 10,
+      "question": "Which advanced Dynamics 365 capability should broadcast sales teams prioritize learning next?",
+      "options": [
+        "Complex customization development",
+        "AI-powered insights and predictive analytics for sales forecasting",
+        "System administration tasks",
+        "Database management"
+      ],
+      "correct": 1,
+      "explanation": "AI-powered insights and predictive analytics provide significant competitive advantages in sales forecasting and client relationship management without requiring technical development skills."
+    },
+    {
+      "id": 11,
+      "question": "How should you approach Dynamics 365 implementation challenges in your organization?",
+      "options": [
+        "Avoid them and stick to basic features",
+        "Document challenges, seek community solutions, and work with Microsoft support for strategic improvements",
+        "Work around them permanently",
+        "Wait for someone else to solve them"
+      ],
+      "correct": 1,
+      "explanation": "Proactively addressing implementation challenges through documentation, community engagement, and Microsoft support leads to better long-term outcomes and organizational success."
+    },
+    {
+      "id": 12,
+      "question": "What's the ultimate goal of mastering Dynamics 365 for broadcast advertising sales?",
+      "options": [
+        "To use all available features",
+        "To transform client relationships, increase sales effectiveness, and drive business growth through data-driven insights",
+        "To become a system administrator",
+        "To reduce time spent on administrative tasks"
+      ],
+      "correct": 1,
+      "explanation": "The ultimate goal is transforming client relationships and driving business growth through data-driven insights, superior customer service, and strategic sales effectiveness that Dynamics 365 enables."
+    }
+  ]
+}
+

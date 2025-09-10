@@ -1,0 +1,188 @@
+{
+  "moduleId": "module4",
+  "title": "Module 4: Managing Opportunities Effectively Quiz",
+  "description": "Test your knowledge of opportunity creation, tracking, and closing in Dynamics 365",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the key difference between a lead and an opportunity in Dynamics 365?",
+      "options": [
+        "Leads are for existing customers, opportunities are for new prospects",
+        "Leads are unqualified prospects, opportunities are qualified potential sales",
+        "Leads and opportunities are exactly the same thing",
+        "Leads are more valuable than opportunities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Leads are unqualified prospects who have shown interest, while opportunities are qualified potential sales where the prospect has been assessed and determined to have budget, authority, need, and timeline."
+    },
+    {
+      "id": 2,
+      "question": "In broadcast advertising sales, what should be included when creating a new opportunity?",
+      "options": [
+        "Estimated revenue, close date, and sales stage",
+        "Campaign details, target audience, and advertising goals",
+        "Key stakeholders and decision-making process",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A comprehensive opportunity should include estimated revenue, close date, sales stage, campaign details, target audience, advertising goals, key stakeholders, and the decision-making process."
+    },
+    {
+      "id": 3,
+      "question": "What is the purpose of sales stages in the opportunity pipeline?",
+      "options": [
+        "To track progress and predict likelihood of closing",
+        "To confuse sales representatives",
+        "To slow down the sales process",
+        "To hide information from managers"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sales stages help track progress through the sales process and predict the likelihood of closing, enabling better forecasting and resource allocation."
+    },
+    {
+      "id": 4,
+      "question": "Which sales stage typically comes after 'Proposal Submitted' in broadcast advertising?",
+      "options": [
+        "Initial Contact",
+        "Needs Assessment",
+        "Negotiation",
+        "Prospecting"
+      ],
+      "correctAnswer": 2,
+      "explanation": "After submitting a proposal, the next typical stage is negotiation, where terms, pricing, and campaign details are discussed and refined."
+    },
+    {
+      "id": 5,
+      "question": "What information is most critical to track in the opportunity record for broadcast advertising?",
+      "options": [
+        "Campaign flight dates and advertising budget",
+        "Target demographics and reach goals",
+        "Competitive landscape and decision timeline",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "All of this information is critical for broadcast advertising opportunities: campaign timing, budget, target demographics, reach goals, competition, and decision timeline all impact the sales strategy."
+    },
+    {
+      "id": 6,
+      "question": "How should you handle an opportunity that has stalled in the pipeline?",
+      "options": [
+        "Ignore it and hope it moves forward",
+        "Immediately mark it as lost",
+        "Reach out to understand obstacles and provide additional value",
+        "Transfer it to another sales rep"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Stalled opportunities should be addressed by reaching out to understand what obstacles exist and providing additional value or information to help move the process forward."
+    },
+    {
+      "id": 7,
+      "question": "What is the benefit of using probability percentages for each sales stage?",
+      "options": [
+        "It helps with accurate revenue forecasting",
+        "It makes the CRM system more complex",
+        "It's required by law",
+        "It automatically closes opportunities"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Probability percentages for each sales stage help with accurate revenue forecasting by providing a realistic assessment of how likely opportunities are to close."
+    },
+    {
+      "id": 8,
+      "question": "In broadcast advertising, when should you advance an opportunity to the 'Proposal' stage?",
+      "options": [
+        "Immediately after the first meeting",
+        "After understanding needs, budget, and decision process",
+        "Only after the client asks for a proposal",
+        "When you need to meet monthly quotas"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An opportunity should advance to the proposal stage only after you thoroughly understand the client's needs, budget, and decision-making process, ensuring your proposal will be relevant and competitive."
+    },
+    {
+      "id": 9,
+      "question": "What is the most important factor when estimating opportunity value for broadcast advertising?",
+      "options": [
+        "The client's office size",
+        "Campaign budget, flight duration, and potential for recurring business",
+        "The number of employees at the client company",
+        "The client's previous advertising experience"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Opportunity value should be based on the campaign budget, flight duration, and potential for recurring business, as these directly impact the revenue potential."
+    },
+    {
+      "id": 10,
+      "question": "How can you use Dynamics 365 to collaborate with team members on large opportunities?",
+      "options": [
+        "Share opportunity records and add team members",
+        "Use notes and activity tracking for communication",
+        "Assign specific roles and responsibilities",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Dynamics 365 supports collaboration through sharing opportunity records, adding team members, using notes and activity tracking, and assigning specific roles and responsibilities."
+    },
+    {
+      "id": 11,
+      "question": "What should you do when an opportunity is marked as 'Won'?",
+      "options": [
+        "Delete the opportunity record",
+        "Update the record with final details and create follow-up activities for account management",
+        "Immediately start working on the next opportunity",
+        "Archive all related information"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When an opportunity is won, update the record with final details and create follow-up activities for account management to ensure successful campaign execution and identify future opportunities."
+    },
+    {
+      "id": 12,
+      "question": "How often should you update opportunity records in Dynamics 365?",
+      "options": [
+        "Once a month",
+        "Only when the opportunity closes",
+        "After every significant interaction or change in status",
+        "Once a year"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Opportunity records should be updated after every significant interaction or change in status to maintain accurate information for forecasting and team collaboration."
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of tracking competitors in opportunity records?",
+      "options": [
+        "To understand competitive landscape and adjust strategy accordingly",
+        "To copy their pricing exactly",
+        "To complain about unfair competition",
+        "To avoid competing altogether"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tracking competitors helps understand the competitive landscape and adjust your strategy, positioning, and value proposition to differentiate your offering and increase win probability."
+    },
+    {
+      "id": 14,
+      "question": "In broadcast advertising, what is a key indicator that an opportunity is ready to close?",
+      "options": [
+        "The client has approved the proposal and confirmed budget availability",
+        "You've had multiple meetings with the client",
+        "The client has visited your office",
+        "You've sent several follow-up emails"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A key indicator that an opportunity is ready to close is when the client has approved the proposal and confirmed budget availability, showing they're committed to moving forward."
+    },
+    {
+      "id": 15,
+      "question": "How can pipeline analysis in Dynamics 365 help improve your broadcast advertising sales performance?",
+      "options": [
+        "Identify bottlenecks and stages where opportunities commonly stall",
+        "Track conversion rates between different sales stages",
+        "Forecast revenue and plan resource allocation",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Pipeline analysis helps identify bottlenecks, track conversion rates between stages, forecast revenue, and plan resource allocation, providing insights to improve overall sales performance and strategy."
+    }
+  ]
+}
+

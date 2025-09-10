@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Capture - Salesforce Training</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lesson-header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .lesson-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .lesson-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .progress-section {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .progress-title {
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .progress-count {
+            color: #1565c0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #bbdefb;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #2196f3;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .progress-text {
+            color: #1565c0;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .section.completed {
+            background: #f1f8e9;
+            border: 1px solid #4caf50;
+        }
+        .section-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section.completed .section-header {
+            background: #e8f5e8;
+        }
+        .section-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2196f3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .section.completed .section-number {
+            background: #4caf50;
+        }
+        .section-title-container {
+            flex: 1;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .section-badges {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .badge-quiz {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .badge-complete {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .section-content {
+            padding: 30px;
+        }
+        .section-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            white-space: pre-line;
+        }
+        .lead-sources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .lead-source {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .lead-source-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .lead-source-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .lead-source-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #2196f3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        .step-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .section-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 30px;
+            background: #f8f9fa;
+        }
+        .section.completed .section-actions {
+            background: #f1f8e9;
+        }
+        .complete-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .complete-btn:hover {
+            background: #1976d2;
+        }
+        .complete-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .lesson-complete {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .lesson-complete-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .lesson-complete-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .lesson-complete-text {
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+        .certificate-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .certificate-btn:hover {
+            background: #388e3c;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .close:hover {
+            opacity: 0.7;
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .quiz-option:hover {
+            border-color: #2196f3;
+            background: #f3f8ff;
+        }
+        .quiz-option.selected {
+            border-color: #2196f3;
+            background: #e3f2fd;
+        }
+        .quiz-option.correct {
+            border-color: #4caf50;
+            background: #e8f5e8;
+        }
+        .quiz-option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .quiz-progress {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .quiz-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .quiz-btn:hover {
+            background: #1976d2;
+        }
+        .quiz-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .quiz-results {
+            text-align: center;
+            padding: 20px;
+        }
+        .quiz-score {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .quiz-score.pass {
+            color: #4caf50;
+        }
+        .quiz-score.fail {
+            color: #f44336;
+        }
+        .quiz-message {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .lesson-header {
+                padding: 20px;
+            }
+            .lesson-title {
+                font-size: 2rem;
+            }
+            .section-content {
+                padding: 20px;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 2% auto;
+            }
+            .lead-sources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Salesforce Training</div>
+            <a href="../index.html" class="back-btn">← Back to Training Home</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="lesson-header">
+            <h1 class="lesson-title">Lead Capture</h1>
+            <p class="lesson-subtitle">Module: Lead Management Mastery</p>
+            
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-title">Lesson Progress</span>
+                    <span class="progress-count"><span id="completed-count">0</span>/4 Sections Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p class="progress-text">Complete all sections and pass their quizzes to earn your lesson certificate.</p>
+            </div>
+        </div>
+
+        <!-- Section 1: Lead Sources -->
+        <div class="section" data-section="lead-sources">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Understanding Lead Sources</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">In sales, leads can come from various sources. Understanding and tracking these sources is crucial for optimizing your marketing efforts and improving conversion rates. Salesforce provides comprehensive tools to capture and categorize leads from multiple channels.</div>
+                
+                <div class="lead-sources">
+                    <div class="lead-source">
+                        <div class="lead-source-icon">🌐</div>
+                        <div class="lead-source-title">Website Forms</div>
+                        <div class="lead-source-desc">Contact forms, demo requests, newsletter signups</div>
+                    </div>
+                    <div class="lead-source">
+                        <div class="lead-source-icon">📧</div>
+                        <div class="lead-source-title">Email Campaigns</div>
+                        <div class="lead-source-desc">Marketing emails, newsletters, promotional campaigns</div>
+                    </div>
+                    <div class="lead-source">
+                        <div class="lead-source-icon">📱</div>
+                        <div class="lead-source-title">Social Media</div>
+                        <div class="lead-source-desc">LinkedIn, Facebook, Twitter engagement</div>
+                    </div>
+                    <div class="lead-source">
+                        <div class="lead-source-icon">📞</div>
+                        <div class="lead-source-title">Cold Calls</div>
+                        <div class="lead-source-desc">Outbound prospecting and telemarketing</div>
+                    </div>
+                    <div class="lead-source">
+                        <div class="lead-source-icon">🤝</div>
+                        <div class="lead-source-title">Referrals</div>
+                        <div class="lead-source-desc">Client referrals and partner introductions</div>
+                    </div>
+                    <div class="lead-source">
+                        <div class="lead-source-icon">🎪</div>
+                        <div class="lead-source-title">Events</div>
+                        <div class="lead-source-desc">Trade shows, conferences, networking events</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('lead-sources')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Section 2: Lead Capture Process -->
+        <div class="section" data-section="capture-process">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Lead Capture Process</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">Effective lead capture requires a systematic approach to ensure no potential opportunities are missed. Here's the step-by-step process for capturing leads in Salesforce:</div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Initial Contact</div>
+                            <div class="step-desc">Record the first interaction with the potential customer</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Gather Information</div>
+                            <div class="step-desc">Collect contact details, company info, and initial requirements</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Categorize Lead</div>
+                            <div class="step-desc">Assign lead source, industry, and priority level</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Set Follow-up</div>
+                            <div class="step-desc">Schedule next action and assign to appropriate team member</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Track Progress</div>
+                            <div class="step-desc">Monitor lead status and update information as needed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('capture-process')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Data Quality -->
+        <div class="section" data-section="data-quality">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Ensuring Data Quality</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">High-quality lead data is essential for successful sales outcomes. Poor data quality can lead to wasted time, missed opportunities, and ineffective marketing campaigns. Here are the key principles for maintaining excellent lead data quality:
+
+**📋 Complete Information**
+- Ensure all required fields are populated
+- Capture both contact and company details
+- Include relevant demographic and firmographic data
+- Document the lead source and initial context
+
+**✅ Accurate Data Entry**
+- Verify email addresses and phone numbers
+- Standardize company names and addresses
+- Use consistent formatting for all entries
+- Double-check spelling and contact details
+
+**🔄 Regular Updates**
+- Keep lead information current and relevant
+- Update status as leads progress through the funnel
+- Remove or merge duplicate entries
+- Archive inactive or unqualified leads
+
+**🎯 Relevant Categorization**
+- Assign appropriate lead scores and ratings
+- Tag leads with relevant industry categories
+- Set priority levels based on potential value
+- Include notes about specific interests or requirements
+
+**🔍 Validation Rules**
+- Implement data validation to prevent errors
+- Use required fields for critical information
+- Set up duplicate detection rules
+- Create workflows for data quality checks</div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('data-quality')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Section 4: Automation & Integration -->
+        <div class="section" data-section="automation-integration">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Automation & Integration</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">Modern lead capture goes beyond manual data entry. Salesforce offers powerful automation and integration capabilities to streamline your lead capture process and ensure no opportunities are missed.
+
+**🤖 Automated Lead Capture**
+- Web form integration for instant lead creation
+- Email-to-lead conversion for inquiry management
+- Social media monitoring and lead identification
+- Marketing automation platform integration
+
+**🔗 System Integrations**
+- Website and landing page connections
+- Marketing automation tools (HubSpot, Marketo)
+- Social media platforms (LinkedIn Sales Navigator)
+- Event management systems and webinar platforms
+
+**⚡ Workflow Automation**
+- Automatic lead assignment based on territory or expertise
+- Instant notification alerts for high-priority leads
+- Follow-up task creation and scheduling
+- Lead scoring and qualification automation
+
+**📊 Real-time Synchronization**
+- Bi-directional data sync with marketing platforms
+- Real-time lead status updates across systems
+- Unified customer view across all touchpoints
+- Automated reporting and analytics
+
+**🎯 Smart Lead Routing**
+- Territory-based automatic assignment
+- Skill-based routing to appropriate team members
+- Round-robin distribution for fair lead allocation
+- Escalation rules for high-value prospects
+
+These automation features ensure that every lead is captured, properly categorized, and quickly routed to the right person for follow-up, maximizing your conversion potential.</div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('automation-integration')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Lesson Complete Section -->
+        <div class="lesson-complete" id="lesson-complete" style="display: none;">
+            <div class="lesson-complete-icon">🎉</div>
+            <h3 class="lesson-complete-title">Lesson Complete!</h3>
+            <p class="lesson-complete-text">Congratulations! You've completed all sections and earned your certificate.</p>
+            <button class="certificate-btn" onclick="showCertificate()">View Certificate</button>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="quiz-title">Section Quiz</h2>
+                <span class="close" onclick="closeQuiz()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="quiz-content">
+                    <!-- Quiz content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🏆 Congratulations!</h2>
+                <span class="close" onclick="closeCertificate()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🏆</div>
+                    <h3 style="color: #2e7d32; margin-bottom: 20px;">Lesson Complete!</h3>
+                    <p style="margin-bottom: 20px;">You have successfully completed all sections and passed all quizzes for this lesson. Your certificate is ready for download.</p>
+                    <div style="border: 3px solid #2196f3; padding: 30px; margin: 20px 0; background: #f8f9fa;">
+                        <h2 style="color: #2196f3; margin-bottom: 10px;">Certificate of Completion</h2>
+                        <p style="margin-bottom: 10px;"><strong>Demo User</strong></p>
+                        <p style="margin-bottom: 10px;">has successfully completed</p>
+                        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Lead Capture</p>
+                        <p style="font-style: italic; margin-bottom: 10px;">Lead Management Mastery</p>
+                        <p style="font-size: 0.9rem; color: #666;">Completed on <span id="completion-date"></span></p>
+                    </div>
+                    <button onclick="downloadCertificate()" style="background: #2196f3; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; margin-right: 10px;">📥 Download Certificate</button>
+                    <button onclick="shareCertificate()" style="background: #4caf50; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">📤 Share Achievement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizzes = {
+            'lead-sources': {
+                title: 'Lead Sources Quiz',
+                questions: [
+                    {
+                        question: 'Which of these is NOT mentioned as a lead source?',
+                        options: [
+                            'Website Forms',
+                            'Email Campaigns',
+                            'Television Ads',
+                            'Social Media'
+                        ],
+                        correct: 2
+                    },
+                    {
+                        question: 'Referrals are considered a valuable lead source in sales.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    },
+                    {
+                        question: 'How many different lead sources are shown in the grid?',
+                        options: ['4', '5', '6', '7'],
+                        correct: 2
+                    }
+                ]
+            },
+            'capture-process': {
+                title: 'Lead Capture Process Quiz',
+                questions: [
+                    {
+                        question: 'What is the first step in the lead capture process?',
+                        options: [
+                            'Gather Information',
+                            'Initial Contact',
+                            'Categorize Lead',
+                            'Set Follow-up'
+                        ],
+                        correct: 1
+                    },
+                    {
+                        question: 'How many steps are there in the lead capture process?',
+                        options: ['3', '4', '5', '6'],
+                        correct: 2
+                    },
+                    {
+                        question: 'Setting follow-up actions is part of the lead capture process.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    }
+                ]
+            },
+            'data-quality': {
+                title: 'Data Quality Quiz',
+                questions: [
+                    {
+                        question: 'Which of these is NOT mentioned as a data quality principle?',
+                        options: [
+                            'Complete Information',
+                            'Accurate Data Entry',
+                            'Social Media Integration',
+                            'Regular Updates'
+                        ],
+                        correct: 2
+                    },
+                    {
+                        question: 'Validation rules help prevent data entry errors.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    },
+                    {
+                        question: 'What should you do with duplicate lead entries?',
+                        options: [
+                            'Keep them separate',
+                            'Remove or merge them',
+                            'Ignore them',
+                            'Archive them immediately'
+                        ],
+                        correct: 1
+                    }
+                ]
+            },
+            'automation-integration': {
+                title: 'Automation & Integration Quiz',
+                questions: [
+                    {
+                        question: 'Which feature enables instant lead creation from websites?',
+                        options: [
+                            'Social media monitoring',
+                            'Web form integration',
+                            'Email campaigns',
+                            'Manual data entry'
+                        ],
+                        correct: 1
+                    },
+                    {
+                        question: 'Smart lead routing can automatically assign leads based on territory.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    },
+                    {
+                        question: 'What type of synchronization does Salesforce offer with marketing platforms?',
+                        options: [
+                            'One-way sync only',
+                            'Manual sync only',
+                            'Bi-directional data sync',
+                            'No synchronization'
+                        ],
+                        correct: 2
+                    }
+                ]
+            }
+        };
+
+        // Progress tracking
+        let completedSections = new Set();
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let quizAnswers = [];
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const saved = localStorage.getItem('lesson-lead-capture-progress');
+            if (saved) {
+                completedSections = new Set(JSON.parse(saved));
+                updateProgress();
+                updateSectionStates();
+            }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('lesson-lead-capture-progress', JSON.stringify([...completedSections]));
+        }
+
+        // Update progress bar and counter
+        function updateProgress() {
+            const total = 4;
+            const completed = completedSections.size;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('completed-count').textContent = completed;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            
+            // Show lesson complete section if all sections are done
+            if (completed === total) {
+                document.getElementById('lesson-complete').style.display = 'block';
+            }
+        }
+
+        // Update section visual states
+        function updateSectionStates() {
+            completedSections.forEach(sectionId => {
+                const section = document.querySelector(`[data-section="${sectionId}"]`);
+                if (section) {
+                    section.classList.add('completed');
+                    section.querySelector('.section-badges').style.display = 'flex';
+                    section.querySelector('.complete-btn').style.display = 'none';
+                }
+            });
+        }
+
+        // Complete a section (triggers quiz if available)
+        function completeSection(sectionId) {
+            const quiz = quizzes[sectionId];
+            if (quiz) {
+                startQuiz(sectionId, quiz);
+            } else {
+                markSectionComplete(sectionId);
+            }
+        }
+
+        // Mark section as complete
+        function markSectionComplete(sectionId) {
+            completedSections.add(sectionId);
+            saveProgress();
+            updateProgress();
+            updateSectionStates();
+        }
+
+        // Start quiz
+        function startQuiz(sectionId, quiz) {
+            currentQuiz = { sectionId, quiz };
+            currentQuestionIndex = 0;
+            quizAnswers = [];
+            
+            document.getElementById('quiz-title').textContent = quiz.title;
+            showQuestion();
+            document.getElementById('quiz-modal').style.display = 'block';
+        }
+
+        // Show current question
+        function showQuestion() {
+            const question = currentQuiz.quiz.questions[currentQuestionIndex];
+            const isLastQuestion = currentQuestionIndex === currentQuiz.quiz.questions.length - 1;
+            
+            const html = `
+                <div class="quiz-question">
+                    <div class="question-text">${currentQuestionIndex + 1}. ${question.question}</div>
+                    <div class="quiz-options">
+                        ${question.options.map((option, index) => `
+                            <div class="quiz-option" onclick="selectOption(${index})" data-option="${index}">
+                                ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <div class="quiz-progress">Question ${currentQuestionIndex + 1} of ${currentQuiz.quiz.questions.length}</div>
+                    <button class="quiz-btn" onclick="${isLastQuestion ? 'submitQuiz()' : 'nextQuestion()'}" id="quiz-next-btn" disabled>
+                        ${isLastQuestion ? 'Submit Quiz' : 'Next'}
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        // Select quiz option
+        function selectOption(optionIndex) {
+            // Clear previous selections
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Select current option
+            document.querySelector(`[data-option="${optionIndex}"]`).classList.add('selected');
+            
+            // Enable next button
+            document.getElementById('quiz-next-btn').disabled = false;
+            
+            // Store answer
+            quizAnswers[currentQuestionIndex] = optionIndex;
+        }
+
+        // Next question
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const score = calculateScore();
+            const passed = score >= 80;
+            
+            showQuizResults(score, passed);
+            
+            if (passed) {
+                markSectionComplete(currentQuiz.sectionId);
+            }
+        }
+
+        // Calculate quiz score
+        function calculateScore() {
+            let correct = 0;
+            currentQuiz.quiz.questions.forEach((question, index) => {
+                if (quizAnswers[index] === question.correct) {
+                    correct++;
+                }
+            });
+            return Math.round((correct / currentQuiz.quiz.questions.length) * 100);
+        }
+
+        // Show quiz results
+        function showQuizResults(score, passed) {
+            const html = `
+                <div class="quiz-results">
+                    <div class="quiz-score ${passed ? 'pass' : 'fail'}">${score}%</div>
+                    <div class="quiz-message">
+                        ${passed 
+                            ? 'Congratulations! You passed the quiz.' 
+                            : `You need 80% to pass. Please review the content and try again.`
+                        }
+                    </div>
+                    <button class="quiz-btn" onclick="closeQuiz()">
+                        ${passed ? 'Continue' : 'Close'}
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        // Close quiz modal
+        function closeQuiz() {
+            document.getElementById('quiz-modal').style.display = 'none';
+            currentQuiz = null;
+        }
+
+        // Show certificate
+        function showCertificate() {
+            document.getElementById('completion-date').textContent = new Date().toLocaleDateString();
+            document.getElementById('certificate-modal').style.display = 'block';
+        }
+
+        // Close certificate modal
+        function closeCertificate() {
+            document.getElementById('certificate-modal').style.display = 'none';
+        }
+
+        // Download certificate
+        function downloadCertificate() {
+            alert('Certificate download functionality would be implemented here.');
+        }
+
+        // Share certificate
+        function shareCertificate() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'I completed a Salesforce training lesson!',
+                    text: 'I just completed "Lead Capture" in the Lead Management Mastery module.',
+                    url: window.location.href
+                });
+            } else {
+                const shareText = 'I just completed "Lead Capture" in the Lead Management Mastery module! 🎉';
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Achievement copied to clipboard!');
+                });
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const quizModal = document.getElementById('quiz-modal');
+            const certModal = document.getElementById('certificate-modal');
+            
+            if (event.target === quizModal) {
+                closeQuiz();
+            }
+            if (event.target === certModal) {
+                closeCertificate();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>
+

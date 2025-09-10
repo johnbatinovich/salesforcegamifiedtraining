@@ -1,0 +1,152 @@
+{
+  "moduleId": "module3",
+  "title": "Module 3: Mastering Lead Management Quiz",
+  "description": "Test your knowledge of lead capture, qualification, and conversion in Dynamics 365",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the first step in the lead management process for broadcast advertising sales?",
+      "options": [
+        "Qualifying the lead's budget",
+        "Capturing and recording lead information in Dynamics 365",
+        "Scheduling a sales meeting",
+        "Creating a proposal"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The first step is capturing and recording lead information in Dynamics 365, ensuring all prospect details are properly documented in the system for tracking and follow-up."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is NOT typically part of the BANT qualification criteria?",
+      "options": [
+        "Budget - Does the prospect have the financial resources?",
+        "Authority - Can the contact make purchasing decisions?",
+        "Beauty - Is the prospect's office aesthetically pleasing?",
+        "Timeline - When does the prospect need the solution?"
+      ],
+      "correctAnswer": 2,
+      "explanation": "BANT stands for Budget, Authority, Need, and Timeline. 'Beauty' is not part of the qualification criteria - the focus should be on the prospect's ability and readiness to purchase."
+    },
+    {
+      "id": 3,
+      "question": "In broadcast advertising sales, what information is most critical to capture when a lead first inquires?",
+      "options": [
+        "Their favorite TV shows and radio stations",
+        "Company name, contact details, advertising goals, and budget range",
+        "Personal hobbies and interests",
+        "Office location and building architecture"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Critical lead information includes company name, contact details, advertising goals, and budget range - information that helps determine if they're a good fit and how to best serve their needs."
+    },
+    {
+      "id": 4,
+      "question": "What is the primary purpose of lead scoring in Dynamics 365?",
+      "options": [
+        "To rank leads based on their likelihood to convert into customers",
+        "To assign random numbers to leads",
+        "To determine the lead's credit score",
+        "To calculate the lead's age"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Lead scoring ranks leads based on their likelihood to convert into customers, helping sales professionals prioritize their efforts on the most promising prospects."
+    },
+    {
+      "id": 5,
+      "question": "When should a lead be converted to an opportunity in Dynamics 365?",
+      "options": [
+        "Immediately after the lead is created",
+        "After the lead has been qualified and shows genuine interest and fit",
+        "Only after a contract is signed",
+        "Never - leads and opportunities are separate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A lead should be converted to an opportunity after it has been qualified and the prospect shows genuine interest and fit for your broadcast advertising services."
+    },
+    {
+      "id": 6,
+      "question": "What happens to the original lead record when it's converted to an opportunity?",
+      "options": [
+        "The lead record is deleted permanently",
+        "The lead record is typically deactivated and linked to the new opportunity",
+        "The lead record remains active and separate",
+        "The lead record is automatically duplicated"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When converted, the lead record is typically deactivated and linked to the new opportunity, maintaining the connection while moving the prospect into the active sales process."
+    },
+    {
+      "id": 7,
+      "question": "In broadcast advertising, which lead source would typically have the highest conversion rate?",
+      "options": [
+        "Cold calling from purchased lists",
+        "Referrals from existing satisfied clients",
+        "Random website visitors",
+        "Social media followers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Referrals from existing satisfied clients typically have the highest conversion rate because they come with built-in trust and recommendation from someone who has experienced your services."
+    },
+    {
+      "id": 8,
+      "question": "What is the benefit of tracking lead sources in Dynamics 365?",
+      "options": [
+        "It helps identify which marketing channels are most effective",
+        "It's required by law for all businesses",
+        "It automatically increases lead quality",
+        "It reduces the number of leads you receive"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tracking lead sources helps identify which marketing channels are most effective, allowing you to invest more resources in the channels that generate the best quality leads."
+    },
+    {
+      "id": 9,
+      "question": "How should you handle leads that don't meet your qualification criteria?",
+      "options": [
+        "Delete them immediately",
+        "Convert them to opportunities anyway",
+        "Mark them as disqualified with clear reasons and consider nurturing for future opportunities",
+        "Ignore them completely"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Disqualified leads should be marked with clear reasons and considered for nurturing campaigns, as their situation may change over time and they could become qualified prospects later."
+    },
+    {
+      "id": 10,
+      "question": "What is lead nurturing in the context of broadcast advertising sales?",
+      "options": [
+        "Providing ongoing value and staying in touch with prospects who aren't ready to buy immediately",
+        "Calling leads every day until they purchase",
+        "Sending the same sales pitch repeatedly",
+        "Ignoring leads until they contact you again"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Lead nurturing involves providing ongoing value and staying in touch with prospects who aren't ready to buy immediately, building relationships and staying top-of-mind for when they are ready."
+    },
+    {
+      "id": 11,
+      "question": "Which activity is most important when following up with a new lead in broadcast advertising?",
+      "options": [
+        "Sending a generic brochure immediately",
+        "Understanding their specific advertising goals and challenges",
+        "Asking for a signed contract on the first call",
+        "Discussing your company's history in detail"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Understanding their specific advertising goals and challenges is most important, as it allows you to tailor your approach and demonstrate how your services can address their unique needs."
+    },
+    {
+      "id": 12,
+      "question": "How can Dynamics 365 automation help with lead management in broadcast advertising?",
+      "options": [
+        "It can automatically assign leads to sales reps based on territory or expertise",
+        "It can send automated follow-up emails and reminders",
+        "It can track lead engagement and update lead scores",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Dynamics 365 automation can handle lead assignment, send automated follow-ups, track engagement, and update lead scores, freeing up sales professionals to focus on high-value activities like building relationships and closing deals."
+    }
+  ]
+}
+

@@ -1,0 +1,152 @@
+{
+  "moduleId": "module1",
+  "title": "Module 1: Introduction & Welcome Quiz",
+  "description": "Test your knowledge of Dynamics 365 basics and the transition from Matrix Monarch",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of Microsoft Dynamics 365 Sales for broadcast advertising professionals?",
+      "options": [
+        "To replace email communication entirely",
+        "To manage customer relationships and sales processes efficiently",
+        "To create advertising content and graphics",
+        "To handle payroll and human resources"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dynamics 365 Sales is a Customer Relationship Management (CRM) system designed to help sales professionals manage leads, opportunities, accounts, and the entire sales process more efficiently."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is a key advantage of Dynamics 365 over Matrix Monarch?",
+      "options": [
+        "Lower cost of ownership",
+        "Cloud-based accessibility and modern interface",
+        "Fewer features and simpler operation",
+        "Limited integration capabilities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dynamics 365 offers cloud-based accessibility, allowing users to access the system from anywhere, along with a modern, intuitive interface that improves user experience and productivity."
+    },
+    {
+      "id": 3,
+      "question": "In the broadcast advertising sales workflow, what typically comes after lead generation?",
+      "options": [
+        "Contract signing",
+        "Performance tracking",
+        "Lead qualification",
+        "Campaign execution"
+      ],
+      "correctAnswer": 2,
+      "explanation": "After generating leads, the next step is lead qualification, where sales professionals assess whether the lead is a good fit for their services and has the potential to become a customer."
+    },
+    {
+      "id": 4,
+      "question": "What does CRM stand for in the context of Dynamics 365?",
+      "options": [
+        "Customer Revenue Management",
+        "Customer Relationship Management",
+        "Customer Resource Management",
+        "Customer Retention Management"
+      ],
+      "correctAnswer": 1,
+      "explanation": "CRM stands for Customer Relationship Management, which is the core functionality of Dynamics 365 Sales - managing all aspects of customer interactions and relationships."
+    },
+    {
+      "id": 5,
+      "question": "Which feature allows Dynamics 365 users to access the system from mobile devices?",
+      "options": [
+        "Desktop synchronization",
+        "Email integration",
+        "Mobile app and responsive web interface",
+        "Phone call logging"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dynamics 365 provides both a dedicated mobile app and a responsive web interface that adapts to mobile devices, allowing users to access their CRM data and functionality from anywhere."
+    },
+    {
+      "id": 6,
+      "question": "In broadcast advertising sales, what is the primary goal of the qualification stage?",
+      "options": [
+        "To create advertising content",
+        "To determine if a lead has the budget, authority, need, and timeline (BANT)",
+        "To negotiate pricing",
+        "To schedule campaign airtime"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The qualification stage focuses on determining if a lead meets the BANT criteria: Budget (can they afford it), Authority (can they make decisions), Need (do they need your services), and Timeline (when do they need it)."
+    },
+    {
+      "id": 7,
+      "question": "What is one of the main benefits of using a cloud-based CRM system like Dynamics 365?",
+      "options": [
+        "Data is stored only on local computers",
+        "Automatic updates and maintenance by Microsoft",
+        "Limited access to prevent security issues",
+        "Requires extensive IT infrastructure"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cloud-based systems like Dynamics 365 are automatically updated and maintained by Microsoft, reducing the IT burden on organizations and ensuring users always have access to the latest features and security updates."
+    },
+    {
+      "id": 8,
+      "question": "Which of the following best describes the sales pipeline in Dynamics 365?",
+      "options": [
+        "A physical pipeline for data transmission",
+        "A visual representation of opportunities at different stages of the sales process",
+        "A backup system for data storage",
+        "A communication tool for internal messaging"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The sales pipeline in Dynamics 365 is a visual representation that shows opportunities at different stages of the sales process, helping sales professionals track progress and forecast revenue."
+    },
+    {
+      "id": 9,
+      "question": "What is the significance of integration capabilities in Dynamics 365 for broadcast advertising sales?",
+      "options": [
+        "It allows connection with traffic systems, billing software, and other business applications",
+        "It prevents data from being shared with other systems",
+        "It only works with Microsoft products",
+        "It requires manual data entry for all systems"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Integration capabilities allow Dynamics 365 to connect with traffic systems, billing software, email platforms, and other business applications, creating a seamless workflow and eliminating duplicate data entry."
+    },
+    {
+      "id": 10,
+      "question": "In the context of broadcast advertising, what does 'opportunity management' primarily involve?",
+      "options": [
+        "Managing radio and TV programming schedules",
+        "Tracking potential sales from initial contact through contract signing",
+        "Creating advertising content and commercials",
+        "Managing employee schedules and assignments"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Opportunity management involves tracking potential sales from the initial contact through the entire sales process until the contract is signed, including proposal creation, negotiations, and closing activities."
+    },
+    {
+      "id": 11,
+      "question": "What is a key difference between leads and opportunities in Dynamics 365?",
+      "options": [
+        "Leads are qualified prospects, opportunities are unqualified contacts",
+        "Leads are unqualified prospects, opportunities are qualified potential sales",
+        "Leads and opportunities are the same thing",
+        "Leads are existing customers, opportunities are new prospects"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Leads are unqualified prospects who have shown interest but haven't been assessed for fit. Opportunities are qualified potential sales where the prospect has been determined to have budget, authority, need, and timeline."
+    },
+    {
+      "id": 12,
+      "question": "Which training approach is most effective for learning Dynamics 365 for broadcast advertising sales?",
+      "options": [
+        "Reading technical manuals only",
+        "Hands-on practice with real scenarios and interactive training modules",
+        "Watching unrelated software tutorials",
+        "Memorizing all menu options without context"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hands-on practice with real broadcast advertising scenarios and interactive training modules is most effective because it provides practical experience and context-specific learning that can be immediately applied to daily work."
+    }
+  ]
+}
+

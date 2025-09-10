@@ -1,0 +1,152 @@
+{
+  "title": "Module 6: Capstone Scenario - Comprehensive Application",
+  "description": "Test your complete understanding of Dynamics 365 through real-world broadcast advertising scenarios",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "A major automotive client wants to launch a multi-market campaign. What's the first step in Dynamics 365?",
+      "options": [
+        "Create individual leads for each market",
+        "Set up a comprehensive opportunity with multiple stakeholders",
+        "Start with a basic contact record",
+        "Create separate accounts for each dealership"
+      ],
+      "correct": 1,
+      "explanation": "For complex multi-market campaigns, you should create a comprehensive opportunity that captures all stakeholders, markets, and campaign components in one organized structure."
+    },
+    {
+      "id": 2,
+      "question": "Your client's campaign spans TV, radio, and digital. How should you structure this in Dynamics 365?",
+      "options": [
+        "Create separate opportunities for each medium",
+        "Use a single opportunity with detailed product/service breakdowns",
+        "Create three different accounts",
+        "Handle each medium in different CRM systems"
+      ],
+      "correct": 1,
+      "explanation": "A single opportunity with detailed product/service breakdowns allows you to track the complete campaign while maintaining visibility into each medium's performance and requirements."
+    },
+    {
+      "id": 3,
+      "question": "The client requests a detailed ROI projection. Which Dynamics 365 feature is most valuable?",
+      "options": [
+        "Basic calculator in notes",
+        "Power BI integration with historical data",
+        "Excel export for manual calculations",
+        "Third-party ROI tools"
+      ],
+      "correct": 1,
+      "explanation": "Power BI integration allows you to leverage historical campaign data, market trends, and performance metrics to create compelling, data-driven ROI projections."
+    },
+    {
+      "id": 4,
+      "question": "Multiple decision-makers are involved. How do you track their different concerns and preferences?",
+      "options": [
+        "Keep notes in a separate document",
+        "Use contact records with detailed relationship mapping and custom fields",
+        "Remember the details mentally",
+        "Create a simple spreadsheet"
+      ],
+      "correct": 1,
+      "explanation": "Contact records with relationship mapping and custom fields allow you to track each stakeholder's role, preferences, concerns, and influence level in the decision-making process."
+    },
+    {
+      "id": 5,
+      "question": "The campaign launch is delayed by 3 weeks. What's the best way to manage this in Dynamics 365?",
+      "options": [
+        "Just remember the new dates",
+        "Update opportunity timeline, adjust all related activities, and notify stakeholders",
+        "Create a new opportunity",
+        "Cancel and restart the process"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365's integrated approach allows you to update the opportunity timeline, automatically adjust related activities, and use workflow automation to notify all stakeholders of changes."
+    },
+    {
+      "id": 6,
+      "question": "Client wants to see competitive analysis against other media options. How do you present this?",
+      "options": [
+        "Email a basic comparison chart",
+        "Use Dynamics 365's document management with Power BI visualizations",
+        "Provide verbal explanations only",
+        "Send separate PDFs"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365's document management integrated with Power BI allows you to create professional, interactive competitive analyses that can be easily updated and shared with stakeholders."
+    },
+    {
+      "id": 7,
+      "question": "The client's marketing team wants regular campaign performance updates. What's the most efficient approach?",
+      "options": [
+        "Manual weekly emails",
+        "Set up automated Power BI dashboards with real-time data sharing",
+        "Monthly phone calls",
+        "Quarterly printed reports"
+      ],
+      "correct": 1,
+      "explanation": "Automated Power BI dashboards provide real-time campaign performance data that stakeholders can access anytime, reducing manual reporting work while improving client satisfaction."
+    },
+    {
+      "id": 8,
+      "question": "Budget approval is pending from corporate. How do you track this critical milestone?",
+      "options": [
+        "Set a calendar reminder",
+        "Create a workflow with automated follow-ups and milestone tracking",
+        "Call them weekly",
+        "Wait for them to contact you"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365 workflows can automate follow-up sequences, track approval milestones, and ensure no critical steps are missed in the approval process."
+    },
+    {
+      "id": 9,
+      "question": "The client wants to integrate their internal marketing data with campaign planning. What's possible?",
+      "options": [
+        "Not possible - keep systems separate",
+        "Use Dynamics 365's API and Power Platform for seamless data integration",
+        "Manual data entry only",
+        "Quarterly data exports"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365's robust API and Power Platform capabilities enable seamless integration with client systems, creating a unified view of all marketing and campaign data."
+    },
+    {
+      "id": 10,
+      "question": "Campaign performance exceeds expectations. How do you leverage this for future opportunities?",
+      "options": [
+        "Just remember the success",
+        "Document results in opportunity history and create follow-up opportunities with success metrics",
+        "Send a thank you email",
+        "Wait for the client to contact you"
+      ],
+      "correct": 1,
+      "explanation": "Documenting success metrics in opportunity history creates valuable reference data for future proposals and enables proactive follow-up opportunity creation based on proven results."
+    },
+    {
+      "id": 11,
+      "question": "The client's industry faces new regulations affecting advertising. How do you stay ahead?",
+      "options": [
+        "Wait for clients to inform you",
+        "Use Dynamics 365's news integration and industry tracking to proactively identify opportunities and challenges",
+        "Read industry publications separately",
+        "Attend occasional conferences"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365's integration capabilities can include industry news feeds and regulatory tracking, allowing you to proactively address client needs and position yourself as a strategic advisor."
+    },
+    {
+      "id": 12,
+      "question": "What's the key advantage of using Dynamics 365 for complex broadcast advertising sales versus traditional methods?",
+      "options": [
+        "It's cheaper than other options",
+        "Complete ecosystem integration enabling data-driven decisions, automated workflows, and superior client relationships",
+        "It has more features than needed",
+        "It's easier to learn than other systems"
+      ],
+      "correct": 1,
+      "explanation": "Dynamics 365's complete ecosystem integration enables data-driven decision making, automated workflows, and superior client relationship management that traditional methods simply cannot match."
+    }
+  ]
+}
+

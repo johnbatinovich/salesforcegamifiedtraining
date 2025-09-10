@@ -1,0 +1,152 @@
+{
+  "moduleId": "module5",
+  "title": "Module 5: Integrating with Your Microsoft Ecosystem Quiz",
+  "description": "Test your knowledge of Dynamics 365 integration with Teams, Outlook, and other Microsoft tools",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary benefit of integrating Dynamics 365 with Microsoft Outlook?",
+      "options": [
+        "It makes Outlook run faster",
+        "It allows seamless email tracking and CRM data access within Outlook",
+        "It changes the Outlook interface completely",
+        "It prevents spam emails"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Integrating Dynamics 365 with Outlook allows seamless email tracking and CRM data access within Outlook, enabling sales professionals to work with customer data without switching between applications."
+    },
+    {
+      "id": 2,
+      "question": "How can Microsoft Teams integration enhance broadcast advertising sales collaboration?",
+      "options": [
+        "Team members can share CRM records and collaborate on opportunities in real-time",
+        "It automatically creates advertising content",
+        "It replaces the need for phone calls entirely",
+        "It only works for internal company communication"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Teams integration allows team members to share CRM records, collaborate on opportunities in real-time, and maintain context-rich conversations around specific accounts and deals."
+    },
+    {
+      "id": 3,
+      "question": "What happens when you track an email in Dynamics 365 through Outlook?",
+      "options": [
+        "The email is deleted from Outlook",
+        "The email is automatically attached to the relevant contact, account, or opportunity record",
+        "The email is sent to all team members",
+        "The email content is changed"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When you track an email, it's automatically attached to the relevant contact, account, or opportunity record in Dynamics 365, creating a complete communication history."
+    },
+    {
+      "id": 4,
+      "question": "Which Microsoft application can be used to create professional proposals for broadcast advertising campaigns?",
+      "options": [
+        "Microsoft Paint",
+        "Microsoft PowerPoint and Word with CRM data integration",
+        "Microsoft Calculator",
+        "Microsoft Notepad"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Microsoft PowerPoint and Word can be integrated with Dynamics 365 to create professional proposals using CRM data, ensuring accuracy and consistency in client communications."
+    },
+    {
+      "id": 5,
+      "question": "How does OneDrive integration benefit broadcast advertising sales teams?",
+      "options": [
+        "It provides secure storage and sharing of proposals, contracts, and campaign materials",
+        "It automatically creates new leads",
+        "It replaces the need for Dynamics 365",
+        "It only stores personal files"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OneDrive integration provides secure storage and sharing of proposals, contracts, and campaign materials, ensuring team members have access to the latest versions of important documents."
+    },
+    {
+      "id": 6,
+      "question": "What is the advantage of using Power BI with Dynamics 365 for broadcast advertising sales?",
+      "options": [
+        "It creates advanced analytics and visualizations of sales performance and trends",
+        "It replaces the need for sales representatives",
+        "It automatically closes all opportunities",
+        "It only shows historical data"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Power BI integration creates advanced analytics and visualizations of sales performance, pipeline trends, and campaign effectiveness, providing insights for better decision-making."
+    },
+    {
+      "id": 7,
+      "question": "How can you schedule meetings with prospects directly from Dynamics 365?",
+      "options": [
+        "You cannot schedule meetings from Dynamics 365",
+        "Through integration with Outlook calendar and Teams",
+        "Only by calling the prospect",
+        "By sending a text message"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Through integration with Outlook calendar and Teams, you can schedule meetings directly from Dynamics 365, automatically creating calendar entries and sending invitations to prospects."
+    },
+    {
+      "id": 8,
+      "question": "What is the benefit of using Microsoft Forms integration for lead capture?",
+      "options": [
+        "It automatically creates lead records in Dynamics 365 from form submissions",
+        "It makes forms look more colorful",
+        "It prevents people from submitting forms",
+        "It only works for internal surveys"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Microsoft Forms integration automatically creates lead records in Dynamics 365 from form submissions, streamlining the lead capture process and ensuring no prospects are missed."
+    },
+    {
+      "id": 9,
+      "question": "How does SharePoint integration support broadcast advertising sales teams?",
+      "options": [
+        "It provides document management and collaboration for campaign materials and contracts",
+        "It replaces email communication",
+        "It automatically creates advertising content",
+        "It only stores old files"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SharePoint integration provides document management and collaboration capabilities for campaign materials, contracts, and other sales-related documents, ensuring version control and team access."
+    },
+    {
+      "id": 10,
+      "question": "What is the advantage of single sign-on (SSO) across Microsoft applications?",
+      "options": [
+        "Users only need to log in once to access all integrated Microsoft applications",
+        "It makes applications run slower",
+        "It requires multiple passwords",
+        "It only works on certain devices"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Single sign-on allows users to log in once and access all integrated Microsoft applications seamlessly, improving productivity and reducing password management complexity."
+    },
+    {
+      "id": 11,
+      "question": "How can Power Automate (Flow) help streamline broadcast advertising sales processes?",
+      "options": [
+        "It can automate routine tasks like lead assignment, follow-up reminders, and data synchronization",
+        "It automatically creates TV commercials",
+        "It replaces all human interaction",
+        "It only works with email"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Power Automate can automate routine tasks like lead assignment, follow-up reminders, data synchronization between systems, and approval workflows, freeing up time for high-value activities."
+    },
+    {
+      "id": 12,
+      "question": "What is the overall benefit of using the integrated Microsoft ecosystem for broadcast advertising sales?",
+      "options": [
+        "It creates a seamless, efficient workflow that reduces context switching and improves productivity",
+        "It makes everything more complicated",
+        "It requires learning completely different systems",
+        "It only works for large companies"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The integrated Microsoft ecosystem creates a seamless, efficient workflow that reduces context switching between applications, improves data consistency, and enhances overall productivity for sales teams."
+    }
+  ]
+}
+

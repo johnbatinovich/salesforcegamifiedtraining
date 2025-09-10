@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Salesforce - Salesforce Training</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lesson-header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .lesson-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .lesson-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .progress-section {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .progress-title {
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .progress-count {
+            color: #1565c0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #bbdefb;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #2196f3;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .progress-text {
+            color: #1565c0;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .section.completed {
+            background: #f1f8e9;
+            border: 1px solid #4caf50;
+        }
+        .section-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section.completed .section-header {
+            background: #e8f5e8;
+        }
+        .section-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2196f3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .section.completed .section-number {
+            background: #4caf50;
+        }
+        .section-title-container {
+            flex: 1;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .section-badges {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .badge-quiz {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .badge-complete {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .section-content {
+            padding: 30px;
+        }
+        .section-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            white-space: pre-line;
+        }
+        .section-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 30px;
+            background: #f8f9fa;
+        }
+        .section.completed .section-actions {
+            background: #f1f8e9;
+        }
+        .complete-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .complete-btn:hover {
+            background: #1976d2;
+        }
+        .complete-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .lesson-complete {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .lesson-complete-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .lesson-complete-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .lesson-complete-text {
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+        .certificate-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .certificate-btn:hover {
+            background: #388e3c;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .close:hover {
+            opacity: 0.7;
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .quiz-option:hover {
+            border-color: #2196f3;
+            background: #f3f8ff;
+        }
+        .quiz-option.selected {
+            border-color: #2196f3;
+            background: #e3f2fd;
+        }
+        .quiz-option.correct {
+            border-color: #4caf50;
+            background: #e8f5e8;
+        }
+        .quiz-option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .quiz-progress {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .quiz-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .quiz-btn:hover {
+            background: #1976d2;
+        }
+        .quiz-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .quiz-results {
+            text-align: center;
+            padding: 20px;
+        }
+        .quiz-score {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .quiz-score.pass {
+            color: #4caf50;
+        }
+        .quiz-score.fail {
+            color: #f44336;
+        }
+        .quiz-message {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .lesson-header {
+                padding: 20px;
+            }
+            .lesson-title {
+                font-size: 2rem;
+            }
+            .section-content {
+                padding: 20px;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 2% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Salesforce Training</div>
+            <a href="../index.html" class="back-btn">← Back to Training Home</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="lesson-header">
+            <h1 class="lesson-title">Welcome to Salesforce</h1>
+            <p class="lesson-subtitle">Module: Introduction to Salesforce</p>
+            
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-title">Lesson Progress</span>
+                    <span class="progress-count"><span id="completed-count">0</span>/3 Sections Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p class="progress-text">Complete all sections and pass their quizzes to earn your lesson certificate.</p>
+            </div>
+        </div>
+
+        <!-- Section 1: Training Overview -->
+        <div class="section" data-section="overview">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Training Overview</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">Welcome to your comprehensive training journey with Microsoft Salesforce Sales, specifically designed for sales professionals. This training will transform how you manage customer relationships, track opportunities, and drive revenue growth in the competitive sales landscape.
+
+Key benefits of this training:
+• Industry-specific focus on sales
+• Hands-on practical exercises
+• Real-world scenarios and case studies
+• Expert guidance from certified trainers
+• Comprehensive coverage of all essential features</div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('overview')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Section 2: Learning Objectives -->
+        <div class="section" data-section="learning-objectives">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">What You'll Learn</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">This comprehensive training program covers seven essential modules designed to make you proficient in Salesforce Sales:
+
+**Module 1: Introduction & Welcome**
+- Understanding the platform and its benefits
+- Navigation and basic interface
+- Setting up your user profile
+
+**Module 2: Personalizing Your Workspace**
+- Customizing views and settings for efficiency
+- Creating personal dashboards
+- Setting up notifications and alerts
+
+**Module 3: Mastering Lead Management**
+- Capturing, qualifying, and converting prospects
+- Lead scoring and prioritization
+- Automated lead nurturing
+
+**Module 4: Managing Opportunities Effectively**
+- Tracking deals through the sales pipeline
+- Forecasting and reporting
+- Collaboration tools for sales teams
+
+**Module 5: Integrating with Microsoft Ecosystem**
+- Leveraging Teams, Outlook, and other tools
+- Document management with SharePoint
+- Power BI integration for analytics
+
+**Module 6: Capstone Module**
+- Real-world scenario practice
+- End-to-end sales process simulation
+- Best practices and troubleshooting
+
+**Module 7: Resources & Next Steps**
+- Ongoing learning and support
+- Certification pathways
+- Community resources and forums</div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('learning-objectives')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Workflow -->
+        <div class="section" data-section="workflow">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div class="section-title-container">
+                    <h2 class="section-title">Sales Excellence Sales Workflow</h2>
+                    <div class="section-badges" style="display: none;">
+                        <span class="badge badge-quiz">✓ Quiz Passed</span>
+                        <span class="badge badge-complete">Section Complete</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-text">Understanding the sales sales workflow is crucial for maximizing Salesforce's potential in your industry. The typical workflow includes:
+
+**1. Lead Generation** 📡
+- Identify potential advertisers
+- Capture leads from multiple sources
+- Initial contact and interest assessment
+
+**2. Qualification** ✅
+- Assess advertiser needs and budget
+- Determine decision-making process
+- Evaluate timeline and urgency
+
+**3. Proposal Creation** 📄
+- Develop customized advertising packages
+- Create compelling presentations
+- Calculate pricing and availability
+
+**4. Negotiation** 🤝
+- Discuss terms and conditions
+- Handle objections and concerns
+- Finalize contract details
+
+**5. Contract Signing** ✍️
+- Execute legal agreements
+- Set up billing and payment terms
+- Schedule campaign implementation
+
+**6. Performance Tracking** 📊
+- Monitor campaign effectiveness
+- Provide regular reporting
+- Optimize for better results
+
+Each stage requires specific tools and processes that Salesforce provides to streamline your sales operations and maximize revenue potential.</div>
+            </div>
+            <div class="section-actions">
+                <button class="complete-btn" onclick="completeSection('workflow')">Mark Section Complete</button>
+            </div>
+        </div>
+
+        <!-- Lesson Complete Section -->
+        <div class="lesson-complete" id="lesson-complete" style="display: none;">
+            <div class="lesson-complete-icon">🎉</div>
+            <h3 class="lesson-complete-title">Lesson Complete!</h3>
+            <p class="lesson-complete-text">Congratulations! You've completed all sections and earned your certificate.</p>
+            <button class="certificate-btn" onclick="showCertificate()">View Certificate</button>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="quiz-title">Section Quiz</h2>
+                <span class="close" onclick="closeQuiz()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="quiz-content">
+                    <!-- Quiz content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🏆 Congratulations!</h2>
+                <span class="close" onclick="closeCertificate()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🏆</div>
+                    <h3 style="color: #2e7d32; margin-bottom: 20px;">Lesson Complete!</h3>
+                    <p style="margin-bottom: 20px;">You have successfully completed all sections and passed all quizzes for this lesson. Your certificate is ready for download.</p>
+                    <div style="border: 3px solid #2196f3; padding: 30px; margin: 20px 0; background: #f8f9fa;">
+                        <h2 style="color: #2196f3; margin-bottom: 10px;">Certificate of Completion</h2>
+                        <p style="margin-bottom: 10px;"><strong>Demo User</strong></p>
+                        <p style="margin-bottom: 10px;">has successfully completed</p>
+                        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Welcome to Salesforce</p>
+                        <p style="font-style: italic; margin-bottom: 10px;">Introduction to Salesforce</p>
+                        <p style="font-size: 0.9rem; color: #666;">Completed on <span id="completion-date"></span></p>
+                    </div>
+                    <button onclick="downloadCertificate()" style="background: #2196f3; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; margin-right: 10px;">📥 Download Certificate</button>
+                    <button onclick="shareCertificate()" style="background: #4caf50; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer;">📤 Share Achievement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizzes = {
+            'overview': {
+                title: 'Training Overview Quiz',
+                questions: [
+                    {
+                        question: 'This training is specifically designed for which industry?',
+                        options: [
+                            'General CRM usage',
+                            'Broadcast advertising sales professionals',
+                            'Manufacturing processes',
+                            'Healthcare management'
+                        ],
+                        correct: 1
+                    },
+                    {
+                        question: 'Salesforce helps transform customer relationship management in sales.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    },
+                    {
+                        question: 'What is the main goal of this training in the sales landscape?',
+                        options: [
+                            'Educational landscape',
+                            'Competitive sales landscape',
+                            'Healthcare landscape',
+                            'Manufacturing landscape'
+                        ],
+                        correct: 1
+                    }
+                ]
+            },
+            'learning-objectives': {
+                title: 'Learning Objectives Quiz',
+                questions: [
+                    {
+                        question: 'How many essential modules does this training program cover?',
+                        options: ['5', '6', '7', '8'],
+                        correct: 2
+                    },
+                    {
+                        question: 'Which module focuses on real-world scenario practice?',
+                        options: [
+                            'Introduction & Welcome',
+                            'Lead Management',
+                            'Capstone Module',
+                            'Resources & Next Steps'
+                        ],
+                        correct: 2
+                    },
+                    {
+                        question: 'The training includes integration with Microsoft ecosystem tools like Teams and Outlook.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    }
+                ]
+            },
+            'workflow': {
+                title: 'Sales Workflow Quiz',
+                questions: [
+                    {
+                        question: 'What is the first stage in the sales sales workflow?',
+                        options: [
+                            'Qualification',
+                            'Lead Generation',
+                            'Proposal Creation',
+                            'Negotiation'
+                        ],
+                        correct: 1
+                    },
+                    {
+                        question: 'How many stages are there in the typical sales sales workflow?',
+                        options: ['4', '5', '6', '7'],
+                        correct: 2
+                    },
+                    {
+                        question: 'Salesforce provides specific tools and processes for each stage of the sales workflow.',
+                        options: ['True', 'False'],
+                        correct: 0
+                    }
+                ]
+            }
+        };
+
+        // Progress tracking
+        let completedSections = new Set();
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let quizAnswers = [];
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const saved = localStorage.getItem('lesson-welcome-progress');
+            if (saved) {
+                completedSections = new Set(JSON.parse(saved));
+                updateProgress();
+                updateSectionStates();
+            }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('lesson-welcome-progress', JSON.stringify([...completedSections]));
+        }
+
+        // Update progress bar and counter
+        function updateProgress() {
+            const total = 3;
+            const completed = completedSections.size;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('completed-count').textContent = completed;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            
+            // Show lesson complete section if all sections are done
+            if (completed === total) {
+                document.getElementById('lesson-complete').style.display = 'block';
+            }
+        }
+
+        // Update section visual states
+        function updateSectionStates() {
+            completedSections.forEach(sectionId => {
+                const section = document.querySelector(`[data-section="${sectionId}"]`);
+                if (section) {
+                    section.classList.add('completed');
+                    section.querySelector('.section-badges').style.display = 'flex';
+                    section.querySelector('.complete-btn').style.display = 'none';
+                }
+            });
+        }
+
+        // Complete a section (triggers quiz if available)
+        function completeSection(sectionId) {
+            const quiz = quizzes[sectionId];
+            if (quiz) {
+                startQuiz(sectionId, quiz);
+            } else {
+                markSectionComplete(sectionId);
+            }
+        }
+
+        // Mark section as complete
+        function markSectionComplete(sectionId) {
+            completedSections.add(sectionId);
+            saveProgress();
+            updateProgress();
+            updateSectionStates();
+        }
+
+        // Start quiz
+        function startQuiz(sectionId, quiz) {
+            currentQuiz = { sectionId, quiz };
+            currentQuestionIndex = 0;
+            quizAnswers = [];
+            
+            document.getElementById('quiz-title').textContent = quiz.title;
+            showQuestion();
+            document.getElementById('quiz-modal').style.display = 'block';
+        }
+
+        // Show current question
+        function showQuestion() {
+            const question = currentQuiz.quiz.questions[currentQuestionIndex];
+            const isLastQuestion = currentQuestionIndex === currentQuiz.quiz.questions.length - 1;
+            
+            const html = `
+                <div class="quiz-question">
+                    <div class="question-text">${currentQuestionIndex + 1}. ${question.question}</div>
+                    <div class="quiz-options">
+                        ${question.options.map((option, index) => `
+                            <div class="quiz-option" onclick="selectOption(${index})" data-option="${index}">
+                                ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="quiz-navigation">
+                    <div class="quiz-progress">Question ${currentQuestionIndex + 1} of ${currentQuiz.quiz.questions.length}</div>
+                    <button class="quiz-btn" onclick="${isLastQuestion ? 'submitQuiz()' : 'nextQuestion()'}" id="quiz-next-btn" disabled>
+                        ${isLastQuestion ? 'Submit Quiz' : 'Next'}
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        // Select quiz option
+        function selectOption(optionIndex) {
+            // Clear previous selections
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Select current option
+            document.querySelector(`[data-option="${optionIndex}"]`).classList.add('selected');
+            
+            // Enable next button
+            document.getElementById('quiz-next-btn').disabled = false;
+            
+            // Store answer
+            quizAnswers[currentQuestionIndex] = optionIndex;
+        }
+
+        // Next question
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        // Submit quiz
+        function submitQuiz() {
+            const score = calculateScore();
+            const passed = score >= 80;
+            
+            showQuizResults(score, passed);
+            
+            if (passed) {
+                markSectionComplete(currentQuiz.sectionId);
+            }
+        }
+
+        // Calculate quiz score
+        function calculateScore() {
+            let correct = 0;
+            currentQuiz.quiz.questions.forEach((question, index) => {
+                if (quizAnswers[index] === question.correct) {
+                    correct++;
+                }
+            });
+            return Math.round((correct / currentQuiz.quiz.questions.length) * 100);
+        }
+
+        // Show quiz results
+        function showQuizResults(score, passed) {
+            const html = `
+                <div class="quiz-results">
+                    <div class="quiz-score ${passed ? 'pass' : 'fail'}">${score}%</div>
+                    <div class="quiz-message">
+                        ${passed 
+                            ? 'Congratulations! You passed the quiz.' 
+                            : `You need 80% to pass. Please review the content and try again.`
+                        }
+                    </div>
+                    <button class="quiz-btn" onclick="closeQuiz()">
+                        ${passed ? 'Continue' : 'Close'}
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        // Close quiz modal
+        function closeQuiz() {
+            document.getElementById('quiz-modal').style.display = 'none';
+            currentQuiz = null;
+        }
+
+        // Show certificate
+        function showCertificate() {
+            document.getElementById('completion-date').textContent = new Date().toLocaleDateString();
+            document.getElementById('certificate-modal').style.display = 'block';
+        }
+
+        // Close certificate modal
+        function closeCertificate() {
+            document.getElementById('certificate-modal').style.display = 'none';
+        }
+
+        // Download certificate
+        function downloadCertificate() {
+            alert('Certificate download functionality would be implemented here.');
+        }
+
+        // Share certificate
+        function shareCertificate() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'I completed a Salesforce training lesson!',
+                    text: 'I just completed "Welcome to Salesforce" in the Introduction to Salesforce module.',
+                    url: window.location.href
+                });
+            } else {
+                const shareText = 'I just completed "Welcome to Salesforce" in the Introduction to Salesforce module! 🎉';
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Achievement copied to clipboard!');
+                });
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const quizModal = document.getElementById('quiz-modal');
+            const certModal = document.getElementById('certificate-modal');
+            
+            if (event.target === quizModal) {
+                closeQuiz();
+            }
+            if (event.target === certModal) {
+                closeCertificate();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>
+

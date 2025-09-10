@@ -1,0 +1,152 @@
+{
+  "moduleId": "module2",
+  "title": "Module 2: Personalizing Your Workspace Quiz",
+  "description": "Test your knowledge of customizing views, grids, and personal settings in Dynamics 365",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary purpose of customizing views in Dynamics 365 for broadcast advertising sales?",
+      "options": [
+        "To change the color scheme of the interface",
+        "To display relevant information efficiently and improve productivity",
+        "To hide all data from other users",
+        "To create backup copies of data"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Customizing views allows sales professionals to display the most relevant information for their specific role and workflow, improving efficiency and productivity by showing only what they need to see."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following can be customized in a Dynamics 365 view?",
+      "options": [
+        "Columns displayed and their order",
+        "Sort order and filtering criteria",
+        "Column width and formatting",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Dynamics 365 views are highly customizable, allowing users to modify columns, their order, sort criteria, filters, column widths, and formatting to create the most useful display for their needs."
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between system views and personal views in Dynamics 365?",
+      "options": [
+        "System views are created by administrators and shared, personal views are created by individual users",
+        "System views are faster than personal views",
+        "Personal views can only show 5 records at a time",
+        "There is no difference between them"
+      ],
+      "correctAnswer": 0,
+      "explanation": "System views are created by administrators and available to all users, while personal views are created by individual users for their own specific needs and are only visible to the creator."
+    },
+    {
+      "id": 4,
+      "question": "In broadcast advertising sales, which columns would be most useful in a leads view?",
+      "options": [
+        "Lead source, company name, contact information, and qualification status",
+        "Employee ID, hire date, and salary information",
+        "Product inventory and shipping details",
+        "Weather forecast and traffic conditions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "For broadcast advertising sales, the most relevant lead information includes where the lead came from, the company name, how to contact them, and their current qualification status in the sales process."
+    },
+    {
+      "id": 5,
+      "question": "How can you save a customized view in Dynamics 365?",
+      "options": [
+        "Views are automatically saved and cannot be customized",
+        "Use the 'Save As' option to create a new personal view",
+        "Only administrators can save views",
+        "Views reset every time you log out"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Users can customize existing views and use the 'Save As' option to create new personal views with their preferred settings, which will be available every time they log in."
+    },
+    {
+      "id": 6,
+      "question": "What is the benefit of using filters in Dynamics 365 views?",
+      "options": [
+        "Filters slow down the system performance",
+        "Filters help focus on specific records that meet certain criteria",
+        "Filters are only for advanced users",
+        "Filters permanently delete unwanted records"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Filters help users focus on specific records that meet certain criteria, such as showing only leads from a particular source or opportunities above a certain value, making it easier to manage large amounts of data."
+    },
+    {
+      "id": 7,
+      "question": "Which of the following is a best practice when creating personal views for broadcast advertising sales?",
+      "options": [
+        "Include as many columns as possible to see all data",
+        "Focus on the most relevant information for your specific role and daily tasks",
+        "Copy exactly what other team members are using",
+        "Never use filters to keep all data visible"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The best practice is to focus on the most relevant information for your specific role and daily tasks, creating views that help you work more efficiently rather than overwhelming you with unnecessary data."
+    },
+    {
+      "id": 8,
+      "question": "How can you modify the sort order in a Dynamics 365 view?",
+      "options": [
+        "Sort order cannot be changed",
+        "Click on column headers to sort by that column",
+        "Only system administrators can change sort order",
+        "Sort order is randomly assigned"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Users can easily change the sort order by clicking on column headers. Clicking once sorts ascending, clicking again sorts descending, and this can be saved as part of a personal view."
+    },
+    {
+      "id": 9,
+      "question": "What happens when you share a personal view with other team members?",
+      "options": [
+        "Personal views cannot be shared",
+        "The view becomes available to selected users or teams",
+        "Sharing automatically deletes the original view",
+        "Only the view name is shared, not the configuration"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Personal views can be shared with other users or teams, making your customized view configuration available to others who might benefit from the same layout and filtering."
+    },
+    {
+      "id": 10,
+      "question": "In the context of broadcast advertising sales, what would be a useful filter for an opportunities view?",
+      "options": [
+        "Show only opportunities with estimated revenue above $10,000",
+        "Show only opportunities in specific sales stages",
+        "Show only opportunities for certain time periods or campaigns",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "All of these filters would be useful for broadcast advertising sales professionals to focus on high-value opportunities, track progress through sales stages, or manage seasonal campaigns and specific time periods."
+    },
+    {
+      "id": 11,
+      "question": "What is the advantage of using the 'Recently Viewed' feature in Dynamics 365?",
+      "options": [
+        "It shows a history of recently accessed records for quick navigation",
+        "It automatically creates new records",
+        "It deletes old records to save space",
+        "It only works with system views"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The 'Recently Viewed' feature provides quick access to records you've recently worked with, improving efficiency by allowing you to quickly return to accounts, opportunities, or leads without searching."
+    },
+    {
+      "id": 12,
+      "question": "How can personalizing your Dynamics 365 workspace improve your effectiveness in broadcast advertising sales?",
+      "options": [
+        "It makes the system look more colorful",
+        "It reduces the amount of data you can access",
+        "It streamlines your workflow by showing relevant information and reducing clicks",
+        "It automatically generates more leads"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Personalizing your workspace streamlines your workflow by displaying the most relevant information for your role, reducing the number of clicks needed to access important data, and helping you work more efficiently with your prospects and customers."
+    }
+  ]
+}
+
